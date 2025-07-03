@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ilustrowana Strona z Wideo</title>
+  <title>ADA Video</title>
   <style>
     * {
       box-sizing: border-box;
@@ -45,8 +45,7 @@
       top: 0; left: 0;
       width: 100%;
       height: 100%;
-      object-fit: contain;
-      background-color: black;
+      border: none;
       z-index: 2;
     }
 
@@ -77,17 +76,18 @@
 <body>
 
   <div class="wrapper">
-    <!-- Wideo tła -->
+    <!-- Wideo tła z GitHub Pages -->
     <video id="backgroundVideo" autoplay muted loop playsinline>
-      <source src="https://drive.google.com/uc?export=download&id=1oky_lgF6XI89aZ0Qrc0ykjrFiCAA8NZW" type="video/mp4">
+      <source src="https://TWOJA_NAZWA_UZYTKOWNIKA.github.io/TWOJE_REPO/adarysowana.mp4" type="video/mp4">
       Twoja przeglądarka nie obsługuje wideo.
     </video>
 
-    <!-- Główne wideo -->
-    <video id="mainVideo" controls playsinline>
-      <source src="https://drive.google.com/uc?export=download&id=1iwvbDZPhF3DYvNbWpNAuNnI7FJ8lA-xy" type="video/mp4">
-      Twoja przeglądarka nie obsługuje wideo.
-    </video>
+    <!-- Wideo docelowe z YouTube -->
+    <iframe id="mainVideo"
+            src=""
+            allow="autoplay; encrypted-media"
+            allowfullscreen>
+    </iframe>
 
     <!-- Przycisk Play -->
     <img src="Zasób 4.svg" alt="Play" class="play-button" id="playBtn">
@@ -101,8 +101,8 @@
     playBtn.addEventListener('click', () => {
       backgroundVideo.style.display = 'none';
       playBtn.style.display = 'none';
+      mainVideo.src = "https://www.youtube.com/embed/fQ6Pfzmxq8w?autoplay=1&rel=0&playsinline=1";
       mainVideo.style.display = 'block';
-      mainVideo.play();
     });
   </script>
 
